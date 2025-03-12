@@ -1,12 +1,22 @@
-# Write your code here
-total_earned = 202 + 118 + 2250 + 1680 + 1075 + 80
+total_sales = 0
+earnings = {
+    'Bubblegum': 202,
+    'Toffee': 118,
+    'Ice cream': 2250,
+    'Milk chocolate': 1680,
+    'Doughnut': 1075,
+    'Pancake': 80,
+}
 
-print('''Earned amount:
-Bubblegum: $202
-Toffee: $118
-Ice cream: $2250
-Milk chocolate: $1680
-Doughnut: $1075
-Pancake: $80
+print("Earned amount:")
+for item, sales in earnings.items():
+    print(f'{item}: ${sales}')
+    total_sales += sales
 
-Income: $''' + str(total_earned))
+print(f"\nIncome: ${total_sales}")
+
+staff_expenses = int(input("Staff expenses:\n"))
+other_expenses = int(input("Other expenses:\n"))
+total_expenses = staff_expenses + other_expenses
+
+print(f"Net income: ${total_sales - total_expenses}")
